@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/apostolovskisimon/book-manager-server#readme",
   "dependencies": {
-    "@babel/register": "^7.13.8",
-    "@babel/runtime": "^7.13.10",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -32,8 +30,7 @@
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.2",
-    "morgan": "^1.10.0"
+    "mongoose": "^5.12.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
