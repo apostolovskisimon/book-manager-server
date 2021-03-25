@@ -8,7 +8,7 @@
     "build-babel": "babel -d ./build ./src -s",
     "clean": "rm -rf .nyc_output build coverage && mkdir build",
     "dev": "cross-env DEBUG=dev nodemon --exec babel-node src/index.js",
-    "start": "node ./build/index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
