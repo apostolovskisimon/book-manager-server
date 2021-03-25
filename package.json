@@ -4,22 +4,41 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "npm run clean && npm run build-babel",
+    "build-babel": "babel -d ./build ./src -s",
+    "clean": "rm -rf .nyc_output build coverage && mkdir build",
+    "dev": "cross-env DEBUG=dev nodemon --exec babel-node src/index.js",
+    "start": "node ./build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apostolovskisimon/book-manager-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apostolovskisimon/book-manager-server/issues"
+  },
+  "homepage": "https://github.com/apostolovskisimon/book-manager-server#readme",
   "dependencies": {
+    "@babel/register": "^7.13.8",
+    "@babel/runtime": "^7.13.10",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
-    "nanoid": "^3.1.22",
-    "node": "^15.10.0",
-    "nodemon": "^2.0.7"
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.12",
+    "@babel/preset-env": "^7.13.12"
   }
 }
