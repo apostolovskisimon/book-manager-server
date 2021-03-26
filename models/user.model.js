@@ -14,6 +14,10 @@ const UserSchema = new Schema({
     index: { unique: true },
   },
   password: { type: String, required: true, trim: true, minlength: 6 },
+  id: {
+    type: String,
+    required: true,
+  },
 });
 
 UserSchema.pre("save", function (next) {
